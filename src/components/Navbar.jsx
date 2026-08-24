@@ -17,20 +17,29 @@ const Navbar = () => {
   const [isOpen,setIsOpen] = useState(false)
   const [activeSection,setActiveSection] = useState("home")
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section[id]")
-      sections.forEach((section) => {
-        if(window.scrollY >= section.offsetTop - 100) {
-          setActiveSection(section.id)
-        }
-      })
-    }
+useEffect(() => {
+  const handleScroll = () => {
+    const sections = Array.from(document.querySelectorAll("section[id]"))
+    const scrollPosition = window.scrollY + 150
 
-    
-  addEventListener("scroll" , handleScroll)
-  return () => removeEventListener("scroll", handleScroll)
-  },[])
+    // إيجاد السكشن الحالي فقط
+    const currentSection = sections.find((section) => {
+      const top = section.offsetTop
+      const height = section.offsetHeight
+      return scrollPosition >= top && scrollPosition < top + height
+    })
+
+    // تحديث الـ State مرة واحدة بس لو لقيت سكشن مطابق
+    if (currentSection) {
+      setActiveSection(currentSection.id)
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll)
+  handleScroll()
+
+  return () => window.removeEventListener("scroll", handleScroll)
+}, [])
 
   const getLinkClass = (path) => {
     const sectionId = path.replace("#","")
@@ -73,7 +82,7 @@ const Navbar = () => {
         }`}>
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.path} className={getLinkClass(link.path)}>{link.name}</a>
+              <a onClick={() => setIsOpen(false)} href={link.path} className={getLinkClass(link.path)}>{link.name}</a>
             </li>
           ))}
         </ul>
