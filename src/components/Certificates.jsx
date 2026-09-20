@@ -1,5 +1,6 @@
-import { useRef } from 'react';
-import useReveal from '../hooks/useReveal.js';
+import { motion } from 'framer-motion';
+import SectionHeading from './SectionHeading.jsx';
+import { fadeUp, stagger, viewportOnce } from '../animations.js';
 
 const certs = [
   {
@@ -28,30 +29,48 @@ const certs = [
   },
 ];
 
-export default function Certificates() {
-  const gridRef = useRef(null);
-  useReveal(gridRef);
+const cardVariants = {
+  ...fadeUp,
+  hover: { y: -6, transition: { duration: 0.25 } },
+};
 
+const iconVariants = {
+  hover: { rotate: [0, -12, 12, 0], scale: 1.08, transition: { duration: 0.5 } },
+};
+
+export default function Certificates() {
   return (
     <section id="certificates" className="px-[5%] py-[100px] bg-bg">
-      <div className="font-mono text-[0.72rem] text-neon tracking-[0.2em] uppercase mb-3">// 04. Certificates</div>
-      <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-black mb-4 leading-[1.2] tracking-[-0.02em]">My Certificates</h2>
-      <div className="w-[60px] h-[3px] bg-grad rounded mb-[60px]"></div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" ref={gridRef}>
+      <SectionHeading label="// 04. Certificates" title="My Certificates" />
+
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+        variants={stagger(0.12)}
+        initial="hidden"
+        whileInView="show"
+        viewport={viewportOnce}
+      >
         {certs.map((c) => (
-          <div
-            className="cert-card reveal bg-card border border-border rounded-2xl p-6 flex gap-[18px] items-start transition-all hover:border-neon hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(0,245,196,0.1)]"
+          <motion.div
             key={c.title}
+            variants={cardVariants}
+            whileHover="hover"
+            className="bg-card border border-border rounded-2xl p-6 flex gap-[18px] items-start transition-[border-color,box-shadow] hover:border-neon hover:shadow-[0_14px_36px_rgba(0,245,196,0.1)]"
           >
-            <div className="w-[50px] h-[50px] shrink-0 rounded-xl bg-grad flex items-center justify-center text-[1.4rem]">{c.icon}</div>
+            <motion.div
+              variants={iconVariants}
+              className="w-[50px] h-[50px] shrink-0 rounded-xl bg-grad flex items-center justify-center text-[1.4rem]"
+            >
+              {c.icon}
+            </motion.div>
             <div>
               <h4 className="text-[0.95rem] font-bold mb-1">{c.title}</h4>
               <p className="text-[0.8rem] text-muted leading-[1.6]">{c.desc}</p>
               <span className="block mt-2 font-mono text-[0.68rem] text-neon">{c.tag}</span>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

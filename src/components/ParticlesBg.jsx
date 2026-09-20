@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { motion } from "framer-motion";
 import Particles from "@tsparticles/react";
 
 export default function ParticlesBg() {
@@ -13,7 +14,7 @@ export default function ParticlesBg() {
           density: { enable: true, area: 800 },
         },
         color: { value: ["#6c63ff", "#00f5c4"] },
-        opacity: { value: .6 },
+        opacity: { value: 0.6 },
         size: { value: { min: 1, max: 3 } },
         links: {
           enable: true,
@@ -47,10 +48,17 @@ export default function ParticlesBg() {
   );
 
   return (
-    <Particles
-      id="particles-canvas"
-      className="absolute inset-0 z-0 w-full h-full"
-      options={options}
-    />
+    <motion.div
+      className="absolute inset-0 z-0"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.6, ease: "easeOut" }}
+    >
+      <Particles
+        id="particles-canvas"
+        className="w-full h-full"
+        options={options}
+      />
+    </motion.div>
   );
 }
