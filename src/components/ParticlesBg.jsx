@@ -9,11 +9,11 @@ export default function ParticlesBg() {
       fpsLimit: 60,
       particles: {
         number: {
-          value: 400,
+          value: 200,
           density: { enable: true, area: 800 },
         },
         color: { value: ["#6c63ff", "#00f5c4"] },
-        opacity: { value: 0.8 },
+        opacity: { value: .6 },
         size: { value: { min: 1, max: 3 } },
         links: {
           enable: true,

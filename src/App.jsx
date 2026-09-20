@@ -16,7 +16,6 @@ import Toast from './components/Toast';
 
 export default function App() {
   useEffect(() => {
-    // تشغيل السكرول الناعم والسحب
     const lenis = initSmoothScroll();
     const removeDragEvents = initDragScroll(lenis);
 

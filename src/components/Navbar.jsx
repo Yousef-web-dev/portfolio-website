@@ -22,14 +22,13 @@ useEffect(() => {
     const sections = Array.from(document.querySelectorAll("section[id]"))
     const scrollPosition = window.scrollY + 150
 
-    // إيجاد السكشن الحالي فقط
+
     const currentSection = sections.find((section) => {
       const top = section.offsetTop
       const height = section.offsetHeight
       return scrollPosition >= top && scrollPosition < top + height
     })
 
-    // تحديث الـ State مرة واحدة بس لو لقيت سكشن مطابق
     if (currentSection) {
       setActiveSection(currentSection.id)
     }

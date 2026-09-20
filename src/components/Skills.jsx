@@ -5,8 +5,8 @@ const skills = [
   { icon: '🌐', name: 'HTML & CSS', w: '0.90', pct: '90%' },
   { icon: '⚡', name: 'Java Script', w: '0.80', pct: '80%' },
   { icon: '⚛️', name: 'React', w: '0.70', pct: '70%' },
-  { icon: '🗄️', name: 'SQL', w: '0.75', pct: '75%' },
-  { icon: '📊', name: 'Power BI', w: '0.68', pct: '68%' },
+  { icon: '▲', name: 'Next.js', w: '0.75', pct: '75%' },
+  { icon: '🔌', name: "API's", w: '0.85', pct: '85%' },
   { icon: '🐙', name: 'Git & GitHub', w: '0.78', pct: '78%' },
 ];
 
@@ -60,4 +60,3 @@ export default function Skills() {
     </section>
   );
 }
-
