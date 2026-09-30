@@ -15,12 +15,74 @@ import grocery from "../assets/grocery.webp";
 import ratatouille from "../assets/ratatouille.webp";
 import watch from "../assets/watch.webp";
 import youflix from "../assets/youflix.webp";
+import cineticket from "../assets/cinemaTicket.webp";
 
 const cardClass =
   "project-card group bg-card border border-border rounded-[20px] overflow-hidden block no-underline text-inherit transition-[border-color,box-shadow] duration-300 hover:border-accent hover:shadow-[0_24px_60px_rgba(108,99,255,0.2)] cursor-pointer will-change-transform";
 
 // مصفوفة المشروعات
 const projects = [
+
+    {
+    id: "youflix",
+    title: "Youflix 🎬",
+    category: "web",
+    type: "Entertainment / Streaming",
+    link: "https://youflix-self.vercel.app/", // (ضع رابط المشروع هنا إذا متاح)
+    img: youflix, // (تأكد من تعريف واستيراد المتغير الخاص بالصورة)
+    bgGradient: "linear-gradient(135deg, #1a0d0d, #300a0a)",
+    alt: "Youflix movie and series streaming web application interface",
+    desc: "A dynamic movie and TV show streaming web application featuring interactive cards, trailers, search functionality, and a personal watch list.",
+    tags: ["React", "Next.js", "Tailwind CSS", "TMDB API", "Framer Motion" , "JavaScript"],
+  },
+  {
+    id: "Chronos Luxury | Timeless Elegance",
+    title: "Chronos Luxury | Timeless Elegance ⌚",
+    category: "web",
+    type: "Web Application",
+    link: "https://turkish-luxury-watches.vercel.app/",
+    img: watch,
+    bgGradient: "linear-gradient(135deg, #0d1428, #1a2542)",
+    alt: "Bosphorus Horology luxury watches interface",
+    desc: "An exclusive luxury watch e-commerce web application inspired by Turkish craftsmanship, featuring real-time timezones, interactive watch illustrations, and seamless UI.",
+    tags: ["Next.js", "React", "Tailwind CSS", "JavaScript", "SVG Animation", "Vercel"],
+  },
+    {
+    id: "gusteaux-bistro",
+    title: "Gusteaux Bistro 🍷",
+    category: "web",
+    type: "Web Application",
+    link: "https://gusteaux-bistro.vercel.app/",
+    img: ratatouille,
+    bgGradient: "linear-gradient(135deg, #1f1a17, #3d2c22)",
+    alt: "Gusteaux Bistro French restaurant interface",
+    desc: "An elegant restaurant web application inspired by French cuisine, featuring an interactive menu, signature dishes, and reservation system.",
+    tags: ["Next.js", "Context API", "Tailwind CSS", "React Hooks", "Framer Motion", "JavaScript"],
+  },
+    {
+    id: "cineticket",
+    title: "CineTicket 🎫",
+    category: "web",
+    type: "Booking / Entertainment",
+    link: "https://cineverse-lac-nine.vercel.app/", // أو الرابط الخاص بمشروع حجز التذاكر إذا كان مختلفاً
+    img: cineticket, // (تأكد من استيراد متغير الصورة الخاص بالمشروع)
+    bgGradient: "linear-gradient(135deg, #0d111a, #0a1f30)",
+    alt: "CineTicket movie booking and reservation web application interface",
+    desc: "A modern web application for browsing movies and booking tickets seamlessly, featuring interactive showtimes, seat selection, and smooth user experience.",
+    tags: ["React", "Tailwind CSS", "JavaScript", "Framer Motion", "API Integration"],
+  },
+    {
+    id: "grocery",
+    title: "FreshCart 🛒",
+    category: "web",
+    type: "Web Application",
+    link: "https://yousef-web-dev.github.io/grocery-website/",
+    img: grocery,
+    bgGradient: "linear-gradient(135deg, #1f1c18, #3d2b1f)",
+    alt: "grocery e-commerce app interface",
+    desc: "A modern e-commerce web app featuring full shopping cart functionality, wishlist management, and real-time state handling using React Context API.",
+    tags: ["React", "Context API", "Tailwind CSS", "React Hooks", "Framer Motion", "JavaScript"],
+  },
   {
     id: "restaurant",
     title: "Grilli Restaurant 🍽️",
@@ -32,6 +94,18 @@ const projects = [
     alt: "restaurant website homepage screenshot",
     desc: "A professional restaurant website with an interactive menu, a reservation system, and a design that reflects the brand's identity.",
     tags: ["html", "css", "JavaScript"],
+  },
+    {
+    id: "cafe",
+    title: "Brew & Co. ☕",
+    category: "web",
+    type: "Web Application",
+    link: "https://yousef-web-dev.github.io/coffee-shop-website/#",
+    img: cafe,
+    bgGradient: "linear-gradient(135deg, #1a1200, #3d2e00)",
+    alt: "cafe website digital menu page",
+    desc: "An elegant café website with a digital menu and a warm atmosphere, designed to attract customers and showcase products beautifully.",
+    tags: ["HTML", "CSS", "JavaScript"],
   },
   {
     id: "calc",
@@ -45,18 +119,7 @@ const projects = [
     desc: "A sleek calculator with a modern UI supporting advanced operations, smooth animations, and an intuitive user experience.",
     tags: ["HTML", "CSS", "JavaScript"],
   },
-  {
-    id: "cafe",
-    title: "Brew & Co. ☕",
-    category: "web",
-    type: "Web Application",
-    link: "https://yousef-web-dev.github.io/coffee-shop-website/#",
-    img: cafe,
-    bgGradient: "linear-gradient(135deg, #1a1200, #3d2e00)",
-    alt: "cafe website digital menu page",
-    desc: "An elegant café website with a digital menu and a warm atmosphere, designed to attract customers and showcase products beautifully.",
-    tags: ["HTML", "CSS", "JavaScript"],
-  },
+
   {
     id: "todo",
     title: "Taskify ✅",
@@ -69,54 +132,11 @@ const projects = [
     desc: "An interactive task management app with add, delete, and filter functionality. Data persists locally via localStorage.",
     tags: ["HTML", "CSS", "JavaScript", "LocalStorage"],
   },
-  {
-    id: "grocery",
-    title: "FreshCart 🛒",
-    category: "web",
-    type: "Web Application",
-    link: "https://yousef-web-dev.github.io/grocery-website/",
-    img: grocery,
-    bgGradient: "linear-gradient(135deg, #1f1c18, #3d2b1f)",
-    alt: "grocery e-commerce app interface",
-    desc: "A modern e-commerce web app featuring full shopping cart functionality, wishlist management, and real-time state handling using React Context API.",
-    tags: ["React", "Context API", "Tailwind CSS", "React Hooks", "Framer Motion", "JavaScript"],
-  },
-  {
-    id: "gusteaux-bistro",
-    title: "Gusteaux Bistro 🍷",
-    category: "web",
-    type: "Web Application",
-    link: "https://gusteaux-bistro.vercel.app/",
-    img: ratatouille,
-    bgGradient: "linear-gradient(135deg, #1f1a17, #3d2c22)",
-    alt: "Gusteaux Bistro French restaurant interface",
-    desc: "An elegant restaurant web application inspired by French cuisine, featuring an interactive menu, signature dishes, and reservation system.",
-    tags: ["Next.js", "Context API", "Tailwind CSS", "React Hooks", "Framer Motion", "JavaScript"],
-  },
-  {
-    id: "bosphorus-horology",
-    title: "Bosphorus Horology ⌚",
-    category: "web",
-    type: "Web Application",
-    link: "https://turkish-luxury-watches.vercel.app/",
-    img: watch,
-    bgGradient: "linear-gradient(135deg, #0d1428, #1a2542)",
-    alt: "Bosphorus Horology luxury watches interface",
-    desc: "An exclusive luxury watch e-commerce web application inspired by Turkish craftsmanship, featuring real-time timezones, interactive watch illustrations, and seamless UI.",
-    tags: ["Next.js", "React", "Tailwind CSS", "JavaScript", "SVG Animation", "Vercel"],
-  },
-  {
-    id: "youflix",
-    title: "Youflix 🎬",
-    category: "web",
-    type: "Entertainment / Streaming",
-    link: "https://youflix-self.vercel.app/", // (ضع رابط المشروع هنا إذا متاح)
-    img: youflix, // (تأكد من تعريف واستيراد المتغير الخاص بالصورة)
-    bgGradient: "linear-gradient(135deg, #1a0d0d, #300a0a)",
-    alt: "Youflix movie and series streaming web application interface",
-    desc: "A dynamic movie and TV show streaming web application featuring interactive cards, trailers, search functionality, and a personal watch list.",
-    tags: ["React", "Next.js", "Tailwind CSS", "TMDB API", "Framer Motion" , "JavaScript"],
-  },
+
+
+
+
+
 ];
 
 const filters = [
