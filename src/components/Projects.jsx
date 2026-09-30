@@ -14,6 +14,7 @@ import todo from "../assets/todo.webp";
 import grocery from "../assets/grocery.webp";
 import ratatouille from "../assets/ratatouille.webp";
 import watch from "../assets/watch.webp";
+import youflix from "../assets/youflix.webp";
 
 const cardClass =
   "project-card group bg-card border border-border rounded-[20px] overflow-hidden block no-underline text-inherit transition-[border-color,box-shadow] duration-300 hover:border-accent hover:shadow-[0_24px_60px_rgba(108,99,255,0.2)] cursor-pointer will-change-transform";
@@ -24,7 +25,7 @@ const projects = [
     id: "restaurant",
     title: "Grilli Restaurant 🍽️",
     category: "web",
-    type: "Web App",
+    type: "Web Application",
     link: "https://yousef-web-dev.github.io/grilli-restaurant/",
     img: restaurantImg,
     bgGradient: "linear-gradient(135deg, #1a1228, #2d1b4e)",
@@ -48,7 +49,7 @@ const projects = [
     id: "cafe",
     title: "Brew & Co. ☕",
     category: "web",
-    type: "Web App",
+    type: "Web Application",
     link: "https://yousef-web-dev.github.io/coffee-shop-website/#",
     img: cafe,
     bgGradient: "linear-gradient(135deg, #1a1200, #3d2e00)",
@@ -72,7 +73,7 @@ const projects = [
     id: "grocery",
     title: "FreshCart 🛒",
     category: "web",
-    type: "Web App",
+    type: "Web Application",
     link: "https://yousef-web-dev.github.io/grocery-website/",
     img: grocery,
     bgGradient: "linear-gradient(135deg, #1f1c18, #3d2b1f)",
@@ -103,6 +104,18 @@ const projects = [
     alt: "Bosphorus Horology luxury watches interface",
     desc: "An exclusive luxury watch e-commerce web application inspired by Turkish craftsmanship, featuring real-time timezones, interactive watch illustrations, and seamless UI.",
     tags: ["Next.js", "React", "Tailwind CSS", "JavaScript", "SVG Animation", "Vercel"],
+  },
+  {
+    id: "youflix",
+    title: "Youflix 🎬",
+    category: "web",
+    type: "Entertainment / Streaming",
+    link: "https://youflix-self.vercel.app/", // (ضع رابط المشروع هنا إذا متاح)
+    img: youflix, // (تأكد من تعريف واستيراد المتغير الخاص بالصورة)
+    bgGradient: "linear-gradient(135deg, #1a0d0d, #300a0a)",
+    alt: "Youflix movie and series streaming web application interface",
+    desc: "A dynamic movie and TV show streaming web application featuring interactive cards, trailers, search functionality, and a personal watch list.",
+    tags: ["React", "Next.js", "Tailwind CSS", "TMDB API", "Framer Motion" , "JavaScript"],
   },
 ];
 
